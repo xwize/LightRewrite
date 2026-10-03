@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<redxml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../LightRewriteDefinitions.xsd">
+  <custom>
+    <light_rewrite>
+      <overrides profile_name="Cohgent" weight="100">
+        <matches>
+          <match type="layer" mode="exact">levels\skellige\ard_skellig\kaer_trolde\sq208_painter\sq208_painter_interior.w2l</match>
+        </matches>
+        <override tag_name="LR_k8lTweaW_candle_small_group_melted_b" label="edited_candle_small_group_melted_b_w2ent">
+          <match mode="exact">candle_small_group_melted_b.w2ent</match>
+          <match_position x="-14.536" y="572.554" z="7.688" />
+          <light index="0" brightness="20.94" />
+        </override>
+        <override tag_name="LR_k8lTweaW_candle_small_group_melted_c_complex" label="edited_candle_small_group_melted_c_complex_w2ent">
+          <match mode="exact">candle_small_group_melted_c_complex.w2ent</match>
+          <match_position x="-14.248" y="575.029" z="7.686" />
+          <light index="0" brightness="2.39" />
+        </override>
+        <override tag_name="LR_k8lTweaW_candle_small_group_melted_complex_2" label="edited_candle_small_group_melted_complex_w2ent">
+          <match mode="exact">candle_small_group_melted_complex.w2ent</match>
+          <match_position x="-14.695" y="571.753" z="7.705" />
+          <light index="0" brightness="1.64" />
+        </override>
+        <override tag_name="LR_k8lTweaW_candle_small_group_melted_complex_3" label="edited_candle_small_group_melted_complex_w2ent">
+          <match mode="exact">candle_small_group_melted_complex.w2ent</match>
+          <match_position x="-14.382" y="574.214" z="7.664" />
+          <light index="0" brightness="0.29" />
+        </override>
+        <override tag_name="LR_k8lTweaW_candle_small_group_melted_d_complex" label="edited_candle_small_group_melted_d_complex_w2ent">
+          <match mode="exact">candle_small_group_melted_d_complex.w2ent</match>
+          <match_position x="-14.383" y="574.018" z="7.657" />
+          <light index="0" brightness="0.44" />
+          <spotlight brightness="0" />
+        </override>
+        <override tag_name="LR_k8lTweaW_candle_small_group_melted_d" label="edited_candle_small_group_melted_d_w2ent">
+          <match mode="exact">candle_small_group_melted_d.w2ent</match>
+          <match_position x="-14.596" y="572.228" z="7.675" />
+          <light index="0" brightness="20.14" />
+        </override>
+        <override tag_name="LR_k8lTweaW_horn_chandelier" label="edited_horn_chandelier_w2ent" brightness="8.59" radius="4.48">
+          <match mode="exact">horn_chandelier.w2ent</match>
+          <match_position x="-18.041" y="573.549" z="8.92" />
+        </override>
+      </overrides>
+    </light_rewrite>
+  </custom>
+</redxml>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<redxml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../LightRewriteDefinitions.xsd">
+  <custom>
+    <light_rewrite>
+      <overrides profile_name="Cohgent" weight="100">
+        <matches>
+          <match type="layer" mode="exact">levels\novigrad\white_bridge\q103_barons_daughter_house\lights.w2l</match>
+        </matches>
+        <override tag_name="LR_cHuuIij3_candelabra_complex_4" label="edited_candelabra_complex_w2ent" brightness="5.79" radius="3.55">
+          <match mode="exact">candelabra_complex.w2ent</match>
+          <match_position x="1690.708" y="1082.836" z="4.342" />
+        </override>
+        <override tag_name="LR_cHuuIij3_candelabra_complex_3" label="edited_candelabra_complex_w2ent" brightness="5.65" radius="2.72">
+          <match mode="exact">candelabra_complex.w2ent</match>
+          <match_position x="1691.256" y="1076.45" z="4.208" />
+        </override>
+        <override tag_name="LR_cHuuIij3_candelabra_complex_5" label="edited_candelabra_complex_w2ent" brightness="2.84" radius="2.81">
+          <match mode="exact">candelabra_complex.w2ent</match>
+          <match_position x="1691.903" y="1080.018" z="4.182" />
+        </override>
+        <override tag_name="LR_cHuuIij3_candelabra_complex" label="edited_candelabra_complex_w2ent" brightness="4.89" radius="3.23">
+          <match mode="exact">candelabra_complex.w2ent</match>
+          <match_position x="1694.513" y="1080.131" z="9.3" />
+        </override>
+      </overrides>
+    </light_rewrite>
+  </custom>
+</redxml>

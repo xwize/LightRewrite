@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<redxml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../LightRewriteDefinitions.xsd">
+  <custom>
+    <light_rewrite>
+      <overrides profile_name="Cohgent" weight="100">
+        <matches>
+          <match type="layer" mode="exact">levels\novigrad\white_bridge\barber_shop\interior_decorations_ns.w2l</match>
+        </matches>
+        <override tag_name="LR_Vpr3Bwlw_baron_candle_holder" label="edited_baron_candle_holder_w2ent" brightness="2.86" radius="6.1">
+          <match mode="exact">baron_candle_holder.w2ent</match>
+          <match_position x="1708.161" y="968.766" z="8.242" />
+        </override>
+        <override tag_name="LR_Vpr3Bwlw_baron_candle_holder_2" label="edited_baron_candle_holder_w2ent" brightness="3.01" radius="5.35">
+          <match mode="exact">baron_candle_holder.w2ent</match>
+          <match_position x="1709.631" y="970.622" z="8.242" />
+        </override>
+        <override tag_name="LR_Vpr3Bwlw_baron_candle_holder_3" label="edited_baron_candle_holder_w2ent" brightness="3.45" radius="4.52">
+          <match mode="exact">baron_candle_holder.w2ent</match>
+          <match_position x="1711.393" y="972.684" z="8.242" />
+        </override>
+        <override tag_name="LR_dg0oR8Bx_candelabra_2" label="edited_candelabra_w2ent" radius="20.91" brightness="9.9">
+          <match mode="exact">candelabra.w2ent</match>
+          <match_position x="1705.152" y="974.013" z="9.219" />
+        </override>
+      </overrides>
+    </light_rewrite>
+  </custom>
+</redxml>

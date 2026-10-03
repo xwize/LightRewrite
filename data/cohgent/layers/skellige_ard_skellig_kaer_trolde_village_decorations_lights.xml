@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<redxml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../LightRewriteDefinitions.xsd">
+  <custom>
+    <light_rewrite>
+      <overrides profile_name="Cohgent" weight="100">
+        <matches>
+          <match type="layer" mode="exact">levels\skellige\ard_skellig\kaer_trolde\village\decorations\lights.w2l</match>
+        </matches>
+        <override tag_name="LR_k8lTweaW_candle_med_b_complex" label="edited_candle_med_b_complex_w2ent" brightness="0.44">
+          <match mode="exact">candle_med_b_complex.w2ent</match>
+          <match_position x="-31.203" y="543.008" z="5.761" />
+        </override>
+        <override tag_name="LR_k8lTweaW_candle_small_group_melted_b_complex" label="edited_candle_small_group_melted_b_complex_w2ent" brightness="0.91">
+          <match mode="exact">candle_small_group_melted_b_complex.w2ent</match>
+          <match_position x="-31.137" y="543.303" z="5.793" />
+        </override>
+        <override tag_name="LR_k8lTweaW_candle_small_group_melted_complex_4" label="edited_candle_small_group_melted_complex_w2ent">
+          <match mode="exact">candle_small_group_melted_complex.w2ent</match>
+          <match_position x="-45.501" y="561.496" z="2.119" />
+          <light index="0" brightness="0.89" />
+          <light index="1" brightness="2.54" />
+          <spotlight brightness="2.69" />
+        </override>
+        <override tag_name="LR_k8lTweaW_coal_small_firepit_complex_5" label="edited_coal_small_firepit_complex_w2ent" brightness="11.54">
+          <match mode="exact">coal_small_firepit_complex.w2ent</match>
+          <match_position x="-118.244" y="524.561" z="3.507" />
+          <spotlight brightness="11.39" />
+        </override>
+        <override tag_name="LR_k8lTweaW_coal_small_firepit_complex_6" label="edited_coal_small_firepit_complex_w2ent" brightness="13.35">
+          <match mode="exact">coal_small_firepit_complex.w2ent</match>
+          <match_position x="-117.395" y="524.949" z="3.517" />
+          <spotlight brightness="24.29" />
+        </override>
+        <override tag_name="LR_k8lTweaW_coal_small_firepit_complex_8" label="edited_coal_small_firepit_complex_w2ent" brightness="1.96" radius="5.23">
+          <match mode="exact">coal_small_firepit_complex.w2ent</match>
+          <match_position x="-42.799" y="544.417" z="4.649" />
+          <spotlight brightness="8.39" />
+        </override>
+        <override tag_name="LR_k8lTweaW_coal_small_firepit_complex_7" label="edited_coal_small_firepit_complex_w2ent" brightness="2.54" radius="5.15">
+          <match mode="exact">coal_small_firepit_complex.w2ent</match>
+          <match_position x="-42.602" y="545.323" z="4.65" />
+          <spotlight brightness="10.19" />
+        </override>
+        <override tag_name="LR_k8lTweaW_fireplace_grate_complex_4" label="edited_fireplace_grate_complex_w2ent" brightness="6.54">
+          <match mode="exact">fireplace_grate_complex.w2ent</match>
+          <match_position x="-107.636" y="528.904" z="3.346" />
+          <spotlight brightness="9.59" />
+        </override>
+        <override tag_name="LR_k8lTweaW_fireplace_grate_complex_5" label="edited_fireplace_grate_complex_w2ent" brightness="6.25">
+          <match mode="exact">fireplace_grate_complex.w2ent</match>
+          <match_position x="-43.669" y="566.881" z="0.693" />
+          <spotlight brightness="4.49" />
+        </override>
+        <override tag_name="LR_k8lTweaW_horn_chandelier_2" label="edited_horn_chandelier_w2ent" brightness="9.94">
+          <match mode="exact">horn_chandelier.w2ent</match>
+          <match_position x="-115.456" y="521.914" z="7.433" />
+        </override>
+      </overrides>
+    </light_rewrite>
+  </custom>
+</redxml>

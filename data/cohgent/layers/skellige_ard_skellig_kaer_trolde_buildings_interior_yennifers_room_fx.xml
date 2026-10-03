@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<redxml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../LightRewriteDefinitions.xsd">
+  <custom>
+    <light_rewrite>
+      <overrides profile_name="Cohgent" weight="100">
+        <matches>
+          <match type="layer" mode="exact">levels\skellige\ard_skellig\kaer_trolde\buildings_interior\yennifers_room\fx.w2l</match>
+        </matches>
+        <override tag_name="LR_k8lTweaW_candelabra_complex" label="edited_candelabra_complex_w2ent" brightness="8.95">
+          <match mode="exact">candelabra_complex.w2ent</match>
+          <match_position x="-57.529" y="611.999" z="3.289" />
+          <spotlight brightness="17.84" />
+        </override>
+        <override tag_name="LR_k8lTweaW_candelabra_complex_2" label="edited_candelabra_complex_w2ent" brightness="7.49">
+          <match mode="exact">candelabra_complex.w2ent</match>
+          <match_position x="-54.643" y="594.554" z="3.425" />
+          <spotlight brightness="9.44" />
+        </override>
+        <override tag_name="LR_k8lTweaW_candle_holder_large_wood_b_complex" label="edited_candle_holder_large_wood_b_complex_w2ent" brightness="8.59">
+          <match mode="exact">candle_holder_large_wood_b_complex.w2ent</match>
+          <match_position x="-60.574" y="602.542" z="2.503" />
+        </override>
+        <override tag_name="LR_k8lTweaW_candle_holder_large_wood_b_complex_2" label="edited_candle_holder_large_wood_b_complex_w2ent" brightness="7.09">
+          <match mode="exact">candle_holder_large_wood_b_complex.w2ent</match>
+          <match_position x="-52.698" y="602.175" z="2.503" />
+        </override>
+      </overrides>
+    </light_rewrite>
+  </custom>
+</redxml>

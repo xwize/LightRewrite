@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<redxml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../LightRewriteDefinitions.xsd">
+  <custom>
+    <light_rewrite>
+      <overrides profile_name="Cohgent" weight="100">
+        <matches>
+          <match type="layer" mode="exact">levels\novigrad\white_bridge\sq311_spy_hideout\decorations.w2l</match>
+        </matches>
+        <override tag_name="LR_cHuuIij3_candelabra_complex_6" label="edited_candelabra_complex_w2ent" brightness="3.89" radius="3.37">
+          <match mode="exact">candelabra_complex.w2ent</match>
+          <match_position x="1668.266" y="1005.23" z="9.306" />
+        </override>
+        <override tag_name="LR_cHuuIij3_candelabra_complex_7" label="edited_candelabra_complex_w2ent" brightness="5.85" radius="3.02">
+          <match mode="exact">candelabra_complex.w2ent</match>
+          <match_position x="1672.863" y="1006.505" z="4.095" />
+        </override>
+        <override tag_name="LR_cHuuIij3_candle_holder_large_wood_b_complex_5" label="edited_candle_holder_large_wood_b_complex_w2ent" brightness="8.75">
+          <match mode="exact">candle_holder_large_wood_b_complex.w2ent</match>
+          <match_position x="1662.599" y="1010.171" z="8.419" />
+        </override>
+        <override tag_name="LR_cHuuIij3_candle_holder_large_wood_b_complex_4" label="edited_candle_holder_large_wood_b_complex_w2ent" brightness="6.03" radius="8.18">
+          <match mode="exact">candle_holder_large_wood_b_complex.w2ent</match>
+          <match_position x="1668.995" y="1009.651" z="3.312" />
+        </override>
+        <override tag_name="LR_cHuuIij3_candle_holder_large_wood_b_complex_3" label="edited_candle_holder_large_wood_b_complex_w2ent" brightness="3.18" radius="3.97">
+          <match mode="exact">candle_holder_large_wood_b_complex.w2ent</match>
+          <match_position x="1671.029" y="1003.52" z="3.312" />
+        </override>
+        <override tag_name="LR_cHuuIij3_candle_holder_large_wood_b_complex" label="edited_candle_holder_large_wood_b_complex_w2ent" brightness="10.99" radius="4.87">
+          <match mode="exact">candle_holder_large_wood_b_complex.w2ent</match>
+          <match_position x="1672.956" y="1002.558" z="8.419" />
+        </override>
+        <override tag_name="LR_cHuuIij3_candle_holder_large_wood_b_complex_2" label="edited_candle_holder_large_wood_b_complex_w2ent" brightness="4.64" radius="7.35">
+          <match mode="exact">candle_holder_large_wood_b_complex.w2ent</match>
+          <match_position x="1675.231" y="1009.304" z="8.419" />
+        </override>
+      </overrides>
+    </light_rewrite>
+  </custom>
+</redxml>

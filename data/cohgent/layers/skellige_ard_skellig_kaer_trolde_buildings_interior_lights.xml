@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<redxml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../LightRewriteDefinitions.xsd">
+  <custom>
+    <light_rewrite>
+      <overrides profile_name="Cohgent" weight="100">
+        <matches>
+          <match type="layer" mode="exact">levels\skellige\ard_skellig\kaer_trolde\buildings_interior\lights.w2l</match>
+        </matches>
+        <override tag_name="LR_k8lTweaW_coal_small_firepit_complex_2" label="edited_coal_small_firepit_complex_w2ent" brightness="23.69">
+          <match mode="exact">coal_small_firepit_complex.w2ent</match>
+          <match_position x="-66.475" y="630.098" z="2.795" />
+          <spotlight brightness="12.74" />
+        </override>
+        <override tag_name="LR_k8lTweaW_coal_small_firepit_complex" label="edited_coal_small_firepit_complex_w2ent" brightness="20.39">
+          <match mode="exact">coal_small_firepit_complex.w2ent</match>
+          <match_position x="-32.999" y="644.434" z="1.258" />
+          <spotlight brightness="16.04" />
+        </override>
+        <override tag_name="LR_k8lTweaW_torch_wall_wooden_complex_3" label="edited_torch_wall_wooden_complex_w2ent" brightness="19.75">
+          <match mode="exact">torch_wall_wooden_complex.w2ent</match>
+          <match_position x="-69.083" y="635.213" z="4.094" />
+        </override>
+        <override tag_name="LR_k8lTweaW_torch_wall_wooden_complex" label="edited_torch_wall_wooden_complex_w2ent" brightness="21.54">
+          <match mode="exact">torch_wall_wooden_complex.w2ent</match>
+          <match_position x="-66.289" y="628.331" z="3.97" />
+        </override>
+        <override tag_name="LR_k8lTweaW_torch_wall_wooden_complex_4" label="edited_torch_wall_wooden_complex_w2ent" brightness="18.55">
+          <match mode="exact">torch_wall_wooden_complex.w2ent</match>
+          <match_position x="-65.873" y="636.224" z="4.382" />
+        </override>
+        <override tag_name="LR_k8lTweaW_torch_wall_wooden_complex_2" label="edited_torch_wall_wooden_complex_w2ent" brightness="17.19">
+          <match mode="exact">torch_wall_wooden_complex.w2ent</match>
+          <match_position x="-63.876" y="631.753" z="3.84" />
+        </override>
+      </overrides>
+    </light_rewrite>
+  </custom>
+</redxml>

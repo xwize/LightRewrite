@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<redxml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../LightRewriteDefinitions.xsd">
+  <custom>
+    <light_rewrite>
+      <overrides profile_name="Cohgent" weight="100">
+        <matches>
+          <match type="layer" mode="exact">levels\skellige\ard_skellig\kaer_trolde\buildings_interior\house_1\fx_lights.w2l</match>
+        </matches>
+        <override tag_name="LR_k8lTweaW_chandelier_small" label="edited_chandelier_small_w2ent" brightness="13.35" radius="2.93">
+          <match mode="exact">chandelier_small.w2ent</match>
+          <match_position x="-68.182" y="690.4" z="7.095" />
+        </override>
+        <override tag_name="LR_k8lTweaW_coal_small_firepit_complex_4" label="edited_coal_small_firepit_complex_w2ent" brightness="12.54" radius="4.26">
+          <match mode="exact">coal_small_firepit_complex.w2ent</match>
+          <match_position x="-65.079" y="686.966" z="4.873" />
+          <spotlight brightness="49.79" />
+        </override>
+      </overrides>
+    </light_rewrite>
+  </custom>
+</redxml>

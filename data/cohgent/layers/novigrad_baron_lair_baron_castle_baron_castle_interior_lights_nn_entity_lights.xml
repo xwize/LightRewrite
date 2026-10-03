@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<redxml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../LightRewriteDefinitions.xsd">
+  <custom>
+    <light_rewrite>
+      <overrides profile_name="Cohgent" weight="100">
+        <matches>
+          <match type="layer" mode="exact">levels\novigrad\baron_lair\baron_castle\baron_castle_interior_lights_nn\entity_lights.w2l</match>
+        </matches>
+        <override tag_name="LR_ajOfCMEx_candle_holder_large_wood_b_complex_2" label="edited_candle_holder_large_wood_b_complex_w2ent" brightness="2.99" radius="4.5">
+          <match mode="exact">candle_holder_large_wood_b_complex.w2ent</match>
+          <match_position x="153.099" y="181.645" z="36.866" />
+        </override>
+      </overrides>
+    </light_rewrite>
+  </custom>
+</redxml>

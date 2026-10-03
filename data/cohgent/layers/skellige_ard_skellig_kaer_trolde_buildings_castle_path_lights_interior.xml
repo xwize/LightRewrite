@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<redxml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../LightRewriteDefinitions.xsd">
+  <custom>
+    <light_rewrite>
+      <overrides profile_name="Cohgent" weight="100">
+        <matches>
+          <match type="layer" mode="exact">levels\skellige\ard_skellig\kaer_trolde\buildings\castle_path\lights_interior.w2l</match>
+        </matches>
+        <override tag_name="LR_k8lTweaW_braziers_wall_chain_bounce_4" label="edited_braziers_wall_chain_bounce_w2ent" brightness="16.64">
+          <match mode="exact">braziers_wall_chain_bounce.w2ent</match>
+          <match_position x="-61.13" y="740.499" z="89.132" />
+        </override>
+        <override tag_name="LR_k8lTweaW_braziers_wall_chain_bounce_6" label="edited_braziers_wall_chain_bounce_w2ent" brightness="21.14">
+          <match mode="exact">braziers_wall_chain_bounce.w2ent</match>
+          <match_position x="-56.998" y="747.982" z="88.844" />
+        </override>
+        <override tag_name="LR_k8lTweaW_braziers_wall_chain_bounce_5" label="edited_braziers_wall_chain_bounce_w2ent" brightness="18.29">
+          <match mode="exact">braziers_wall_chain_bounce.w2ent</match>
+          <match_position x="-45.389" y="723.25" z="79.077" />
+        </override>
+        <override tag_name="LR_k8lTweaW_braziers_wall_chain_bounce_2" label="edited_braziers_wall_chain_bounce_w2ent" brightness="14.24">
+          <match mode="exact">braziers_wall_chain_bounce.w2ent</match>
+          <match_position x="-32.447" y="703.567" z="70.438" />
+        </override>
+        <override tag_name="LR_k8lTweaW_braziers_wall_chain_bounce_3" label="edited_braziers_wall_chain_bounce_w2ent" brightness="13.19">
+          <match mode="exact">braziers_wall_chain_bounce.w2ent</match>
+          <match_position x="-31.938" y="718.269" z="74.125" />
+        </override>
+        <override tag_name="LR_k8lTweaW_braziers_wall_chain_bounce" label="edited_braziers_wall_chain_bounce_w2ent" brightness="16.49">
+          <match mode="exact">braziers_wall_chain_bounce.w2ent</match>
+          <match_position x="-27.248" y="692.387" z="67.066" />
+        </override>
+        <override tag_name="LR_k8lTweaW_braziers_wall_round_bounce" label="edited_braziers_wall_round_bounce_w2ent" brightness="12.8">
+          <match mode="exact">braziers_wall_round_bounce.w2ent</match>
+          <match_position x="-25.893" y="706.365" z="67.182" />
+          <spotlight brightness="11.25" />
+        </override>
+      </overrides>
+    </light_rewrite>
+  </custom>
+</redxml>

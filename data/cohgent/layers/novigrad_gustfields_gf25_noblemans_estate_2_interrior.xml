@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<redxml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../LightRewriteDefinitions.xsd">
+  <custom>
+    <light_rewrite>
+      <overrides profile_name="Cohgent" weight="100">
+        <matches>
+          <match type="layer" mode="exact">levels\novigrad\gustfields\gf25_noblemans_estate_2\interrior.w2l</match>
+        </matches>
+        <override tag_name="LR_2a3jGmrc_candelabra_noshadow" label="edited_candelabra_noshadow_w2ent" brightness="10.45" radius="15.68">
+          <match mode="exact">candelabra_noshadow.w2ent</match>
+        </override>
+        <override tag_name="LR_2a3jGmrc_candelabra_standing_noshadow" label="edited_candelabra_standing_noshadow_w2ent" brightness="6.59" radius="6.53">
+          <match mode="exact">candelabra_standing_noshadow.w2ent</match>
+        </override>
+      </overrides>
+    </light_rewrite>
+  </custom>
+</redxml>

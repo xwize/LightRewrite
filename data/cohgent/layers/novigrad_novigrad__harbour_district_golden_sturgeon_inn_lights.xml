@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<redxml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../LightRewriteDefinitions.xsd">
+  <custom>
+    <light_rewrite>
+      <overrides profile_name="Cohgent" weight="100">
+        <matches>
+          <match type="layer" mode="exact">levels\novigrad\novigrad\_harbour_district\golden_sturgeon_inn\lights.w2l</match>
+        </matches>
+        <override tag_name="LR_KWMYeEjd_candleholder_fancy_fake_shadow" label="edited_candleholder_fancy_fake_shadow_w2ent">
+          <match mode="exact">candleholder_fancy_fake_shadow.w2ent</match>
+          <match_position x="543.319" y="1860.965" z="11.955" />
+          <spotlight brightness="6.45" />
+        </override>
+        <override tag_name="LR_KWMYeEjd_horn_chandelier" label="edited_horn_chandelier_w2ent" radius="7.42">
+          <match mode="exact">horn_chandelier.w2ent</match>
+          <match_position x="534.815" y="1867.185" z="5.846" />
+        </override>
+        <override tag_name="LR_KWMYeEjd_horn_chandelier_2" label="edited_horn_chandelier_w2ent" radius="7.58">
+          <match mode="exact">horn_chandelier.w2ent</match>
+          <match_position x="540.636" y="1872.982" z="5.816" />
+        </override>
+      </overrides>
+    </light_rewrite>
+  </custom>
+</redxml>

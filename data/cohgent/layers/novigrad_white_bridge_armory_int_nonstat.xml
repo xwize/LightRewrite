@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<redxml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../LightRewriteDefinitions.xsd">
+  <custom>
+    <light_rewrite>
+      <overrides profile_name="Cohgent" weight="100">
+        <matches>
+          <match type="layer" mode="exact">levels\novigrad\white_bridge\armory\int_nonstat.w2l</match>
+        </matches>
+        <override tag_name="LR_dg0oR8Bx_candelabra" label="edited_candelabra_w2ent" brightness="3.3" radius="3.29">
+          <match mode="exact">candelabra.w2ent</match>
+          <match_position x="1726.764" y="1044.38" z="6.685" />
+        </override>
+        <override tag_name="LR_dg0oR8Bx_chandelier_small_noshadow_4" label="edited_chandelier_small_noshadow_w2ent" brightness="12.74" radius="4.05">
+          <match mode="exact">chandelier_small_noshadow.w2ent</match>
+          <match_position x="1729.17" y="1043.046" z="8.376" />
+        </override>
+      </overrides>
+    </light_rewrite>
+  </custom>
+</redxml>

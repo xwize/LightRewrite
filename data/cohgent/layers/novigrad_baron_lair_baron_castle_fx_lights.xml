@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<redxml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../LightRewriteDefinitions.xsd">
+  <custom>
+    <light_rewrite>
+      <overrides profile_name="Cohgent" weight="100">
+        <matches>
+          <match type="layer" mode="exact">levels\novigrad\baron_lair\baron_castle\fx_lights.w2l</match>
+        </matches>
+        <override tag_name="LR_ajOfCMEx_braziers_floor_square_bounce_2" label="edited_braziers_floor_square_bounce_w2ent" brightness="43.04">
+          <match mode="exact">braziers_floor_square_bounce.w2ent</match>
+          <match_position x="204.873" y="142.196" z="31.911" />
+        </override>
+        <override tag_name="LR_ajOfCMEx_braziers_floor_square_bounce" label="edited_braziers_floor_square_bounce_w2ent" brightness="21.74">
+          <match mode="exact">braziers_floor_square_bounce.w2ent</match>
+          <match_position x="214.48" y="146.22" z="31.819" />
+        </override>
+        <override tag_name="LR_ajOfCMEx_campfire_01" label="edited_campfire_01_w2ent" brightness="34.19" radius="4.82">
+          <match mode="exact">campfire_01.w2ent</match>
+          <match_position x="193.726" y="140.506" z="32.434" />
+        </override>
+        <override tag_name="LR_ajOfCMEx_candle_holder_large_wood_b_complex" label="edited_candle_holder_large_wood_b_complex_w2ent" brightness="4.54" radius="5.17">
+          <match mode="exact">candle_holder_large_wood_b_complex.w2ent</match>
+          <match_position x="187.271" y="182.326" z="37.295" />
+        </override>
+        <override tag_name="LR_ajOfCMEx_candle_holder_large_wood_b" label="edited_candle_holder_large_wood_b_w2ent" brightness="7.99" radius="4.32">
+          <match mode="exact">candle_holder_large_wood_b.w2ent</match>
+          <match_position x="169.391" y="177.815" z="37.343" />
+        </override>
+        <override tag_name="LR_ajOfCMEx_chandelier_small_noshadow" label="edited_chandelier_small_noshadow_w2ent" brightness="23.39" radius="5.97">
+          <match mode="exact">chandelier_small_noshadow.w2ent</match>
+          <match_position x="206.804" y="137.191" z="38.416" />
+        </override>
+        <override tag_name="LR_ajOfCMEx_chandelier_small_noshadow_2" label="edited_chandelier_small_noshadow_w2ent" brightness="27.9" radius="7.71">
+          <match mode="exact">chandelier_small_noshadow.w2ent</match>
+          <match_position x="208.414" y="143.151" z="38.576" />
+        </override>
+        <override tag_name="LR_ajOfCMEx_chandelier_small_noshadow_3" label="edited_chandelier_small_noshadow_w2ent" brightness="26.39" radius="7.12">
+          <match mode="exact">chandelier_small_noshadow.w2ent</match>
+          <match_position x="210.004" y="149.821" z="38.346" />
+        </override>
+        <override tag_name="LR_ajOfCMEx_fireplace_grate" label="edited_fireplace_grate_w2ent" brightness="8.39" radius="2.99">
+          <match mode="exact">fireplace_grate.w2ent</match>
+          <match_position x="160.616" y="186.572" z="36.889" />
+        </override>
+        <override tag_name="LR_ajOfCMEx_hanging_lamp_complex" label="edited_hanging_lamp_complex_w2ent" brightness="35.45">
+          <match mode="exact">hanging_lamp_complex.w2ent</match>
+          <match_position x="205.113" y="150.444" z="34.342" />
+        </override>
+        <override tag_name="LR_ajOfCMEx_hanging_lamp_complex_2" label="edited_hanging_lamp_complex_w2ent" brightness="21.3">
+          <match mode="exact">hanging_lamp_complex.w2ent</match>
+          <match_position x="211.082" y="154.357" z="34.338" />
+        </override>
+        <override tag_name="LR_ajOfCMEx_torch_hand_long_complex" label="edited_torch_hand_long_complex_w2ent" brightness="14">
+          <match mode="exact">torch_hand_long_complex.w2ent</match>
+          <match_position x="208.243" y="155.27" z="33.287" />
+        </override>
+      </overrides>
+    </light_rewrite>
+  </custom>
+</redxml>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<redxml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../LightRewriteDefinitions.xsd">
+  <custom>
+    <light_rewrite>
+      <overrides profile_name="Cohgent" weight="100">
+        <matches>
+          <match type="layer" mode="exact">levels\novigrad\white_bridge\mended_cauldron_inn\lights.w2l</match>
+        </matches>
+        <override tag_name="LR_dg0oR8Bx_chandelier_small_noshadow" label="edited_chandelier_small_noshadow_w2ent" brightness="29.99" radius="6.17">
+          <match mode="exact">chandelier_small_noshadow.w2ent</match>
+          <match_position x="1702.131" y="1007.586" z="9.416" />
+        </override>
+        <override tag_name="LR_dg0oR8Bx_chandelier_small_noshadow_3" label="edited_chandelier_small_noshadow_w2ent" brightness="7.94" radius="5.77">
+          <match mode="exact">chandelier_small_noshadow.w2ent</match>
+          <match_position x="1704.868" y="1014.915" z="9.331" />
+        </override>
+        <override tag_name="LR_dg0oR8Bx_chandelier_small_noshadow_2" label="edited_chandelier_small_noshadow_w2ent" brightness="6.74" radius="10.7">
+          <match mode="exact">chandelier_small_noshadow.w2ent</match>
+          <match_position x="1707.27" y="1013.528" z="9.331" />
+        </override>
+      </overrides>
+    </light_rewrite>
+  </custom>
+</redxml>

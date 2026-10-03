@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<redxml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../LightRewriteDefinitions.xsd">
+  <custom>
+    <light_rewrite>
+      <overrides profile_name="Cohgent" weight="100">
+        <matches>
+          <match type="layer" mode="exact">levels\skellige\ard_skellig\kaer_trolde\buildings\building_a\lights.w2l</match>
+        </matches>
+        <override tag_name="LR_k8lTweaW_candle_small_group_melted_complex" label="edited_candle_small_group_melted_complex_w2ent">
+          <match mode="exact">candle_small_group_melted_complex.w2ent</match>
+          <match_position x="-63.73" y="682.806" z="3.143" />
+          <light index="0" brightness="4.79" />
+          <light index="1" brightness="2.69" />
+          <spotlight brightness="7.7" />
+        </override>
+        <override tag_name="LR_k8lTweaW_fireplace_grate_complex_3" label="edited_fireplace_grate_complex_w2ent" brightness="10.79">
+          <match mode="exact">fireplace_grate_complex.w2ent</match>
+          <match_position x="-75.399" y="707.201" z="3.805" />
+        </override>
+        <override tag_name="LR_k8lTweaW_fireplace_grate_complex_2" label="edited_fireplace_grate_complex_w2ent" brightness="6.44">
+          <match mode="exact">fireplace_grate_complex.w2ent</match>
+          <match_position x="-60.65" y="681.644" z="2.509" />
+        </override>
+        <override tag_name="LR_k8lTweaW_fireplace_grate_complex" label="edited_fireplace_grate_complex_w2ent" brightness="17.69">
+          <match mode="exact">fireplace_grate_complex.w2ent</match>
+          <match_position x="-60.38" y="675.62" z="2.129" />
+          <spotlight brightness="9.59" />
+        </override>
+      </overrides>
+    </light_rewrite>
+  </custom>
+</redxml>
