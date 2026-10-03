@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<redxml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="../LightRewriteDefinitions.xsd">
+  <custom>
+    <light_rewrite>
+      <!-- Cohgent: Realistic, plus per-light edits made in the debug editor -->
+      <!-- Edits live in session_*.xml beside this file, each at an increasing weight (100+) so newer sessions win -->
+      <overrides profile_name="Cohgent"
+                 weight="0">
+        <!-- The only inherits declaration for Cohgent; session files must not repeat it -->
+        <inherits>Realistic</inherits>
+
+        <!-- Groups without overrides are dropped at load, taking the inherits with them -->
+        <override tag_name="LR_Cohgent_Placeholder"
+                  label="cohgent_placeholder">
+          <match mode="exact">lr_cohgent_placeholder.w2ent</match>
+        </override>
+      </overrides>
+    </light_rewrite>
+  </custom>
+</redxml>
