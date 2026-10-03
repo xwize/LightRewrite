@@ -32,6 +32,7 @@ function ParseLightRewriteRule(
 ): ILightRewriteMatchRule {
     if (node.nodeName == 'match') return ParseLightRewriteMatchRule(owner, dm, node);
     if (node.nodeName == 'match_scale') return ParseLightRewriteScaleRule(owner, dm, node);
+    if (node.nodeName == 'match_position') return ParseLightRewritePositionRule(owner, dm, node);
     return NULL;
 }
 
@@ -82,6 +83,40 @@ function ParseLightRewriteScaleRule(
 
     if (dm.GetCustomNodeAttributeValueString(scaleNode, 'scale', strVal)) {
         rule.scale = StringToFloat(strVal, 1.0);
+    }
+
+    return rule;
+}
+
+function ParseLightRewritePositionRule(
+    owner: CObject,
+    dm: CDefinitionsManagerAccessor,
+    positionNode: SCustomNode
+): CLightRewritePositionRule {
+    var rule: CLightRewritePositionRule;
+    var x, y, z, strVal: string;
+
+    if (
+        !dm.GetCustomNodeAttributeValueString(positionNode, 'x', x) ||
+        !dm.GetCustomNodeAttributeValueString(positionNode, 'y', y)
+    ) {
+        LogLightRewriteXml("Skipping invalid position filter - missing x or y attribute.");
+        return NULL;
+    }
+
+    rule = new CLightRewritePositionRule in owner;
+    rule.position.X = StringToFloat(x, 0.f);
+    rule.position.Y = StringToFloat(y, 0.f);
+
+    if (dm.GetCustomNodeAttributeValueString(positionNode, 'z', z)) {
+        rule.position.Z = StringToFloat(z, 0.f);
+    }
+    else {
+        rule.matchZ = false;
+    }
+
+    if (dm.GetCustomNodeAttributeValueString(positionNode, 'tolerance', strVal)) {
+        rule.tolerance = StringToFloat(strVal, rule.tolerance);
     }
 
     return rule;

@@ -31,11 +31,12 @@ class LRDebug_LabelManager {
         groupCountLabel = new LRDebug_ScreenLabel in this;
         groupCountLabel.Init(0x40006003, 0.5, 0.85);
         scaleLabel = new LRDebug_ScreenLabel in this;
-        scaleLabel.Init(0x40006002, 0.6, 0.98);
+        // Offset from centre in HUD units, so the gap to the centred labels holds on 16:9 and 21:9
+        scaleLabel.Init(0x40006002, 0.5, 0.98, 252.0);
         timeLabel = new LRDebug_ScreenLabel in this;
-        timeLabel.Init(0x40006004, 0.65, 0.98);
+        timeLabel.Init(0x40006004, 0.5, 0.98, 378.0);
         timeModeLabel = new LRDebug_ScreenLabel in this;
-        timeModeLabel.Init(0x40006005, 0.65, 0.95);
+        timeModeLabel.Init(0x40006005, 0.5, 0.95, 378.0);
         clockFace = new LRDebug_ClockFace in this;
         clockFace.Init();
         attrLabels = new LRDebug_AttributeLabels in this;

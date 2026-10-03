@@ -12,10 +12,8 @@ class LRDebug_AttributeLabels {
     private const var ROWS   : int;  default ROWS = 5;
     private const var BASE_ID: int;  default BASE_ID = 1073766656;
 
-    private const var RIGHT_X : float;  default RIGHT_X = 0.40;
-    private const var COL_STEP: float;  default COL_STEP = 0.03;
     private const var BOTTOM_Y: float;  default BOTTOM_Y = 0.98;
-    private const var ROW_STEP: float;  default ROW_STEP = 0.016;
+    private const var ROW_STEP: float;  default ROW_STEP = 0.019;
     private const var FONT    : int;    default FONT = 16;
 
     public function Init() {
@@ -27,11 +25,27 @@ class LRDebug_AttributeLabels {
                 labels.PushBack(new LRDebug_ScreenLabel in this);
                 labels[idx].Init(
                     BASE_ID + idx,
-                    RIGHT_X - col * COL_STEP,
-                    BOTTOM_Y - row * ROW_STEP
+                    0.5,
+                    BOTTOM_Y - row * ROW_STEP,
+                    ColumnOffset(col)
                 );
                 slotUsed.PushBack(false);
             }
+        }
+    }
+
+    /**
+     * Column centre, in HUD units from screen centre. The HUD is always 1080 units tall but
+     * 1920 (16:9) to 2520 (21:9) wide, so unit offsets hold the spacing against the fixed-size
+     * font on any aspect. Each gap clears the wider neighbour's longest row at FONT 16
+     * (~8.5 units per character): core ~140, shadow ~155, colour ~120, placement ~220.
+     */
+    private function ColumnOffset(col: int): float {
+        switch (col) {
+            case 0:  return -252.0;  // brightness / radius / attenuation
+            case 1:  return -417.0;  // shadow
+            case 2:  return -582.0;  // colour
+            default: return -812.0;  // placement ("use spotlight colour")
         }
     }
 

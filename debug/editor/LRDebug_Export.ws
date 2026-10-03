@@ -181,6 +181,15 @@ function LRDebug_BuildEditedFields(
     return line;
 }
 
+/** World position, so each edited instance exports separately from other copies of its template */
+function LRDebug_BuildPositionSegment(entity: CGameplayEntity): string {
+    var pos: Vector = entity.GetWorldPosition();
+
+    return " posX=" + FloatToStringPrec(pos.X, 3) +
+        " posY=" + FloatToStringPrec(pos.Y, 3) +
+        " posZ=" + FloatToStringPrec(pos.Z, 3);
+}
+
 // Scans all tagged light entities globally and logs any that carry session edits
 function LRDebug_ExportEditedLights(optional channel: name) {
     var entities: array<CEntity>;
@@ -212,6 +221,7 @@ function LRDebug_ExportEditedLights(optional channel: name) {
         if (entityFile == "") continue;
 
         line = "entityFile=" + entityFile + " layerPath=" + layerPath +
+            LRDebug_BuildPositionSegment(entity) +
             " pointLightCount=" + IntToString(LRDebug_PointLightCount(entity)) +
             " spotLightCount=" + IntToString(LRDebug_SpotLightCount(entity)) +
             fields;

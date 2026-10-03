@@ -103,11 +103,11 @@ function ParseExportLines {
 
 # Canonical base field names; pN_/sN_ prefixed variants are stripped before lookup
 $floatFields = 'brightness', 'radius', 'attenuation', 'shadowFadeDistance', 'shadowFadeRange', 'shadowBlendFactor', `
-    'innerAngle', 'outerAngle', 'softness', 'offsetX', 'offsetY', 'offsetZ', 'alignOffsetZ'
+    'innerAngle', 'outerAngle', 'softness', 'offsetX', 'offsetY', 'offsetZ', 'alignOffsetZ', 'posX', 'posY', 'posZ'
 $intFields = 'colorR', 'colorG', 'colorB', 'alignPointLights', 'useSpotlightColor'
 
 # Structural metadata only used for bookkeeping; skipped during entry comparison and attribute output.
-$metaFields = 'entityFile', 'layerPath', 'pointLightCount', 'spotLightCount'
+$metaFields = 'entityFile', 'layerPath', 'pointLightCount', 'spotLightCount', 'posX', 'posY', 'posZ'
 
 function CoerceEntry {
     param([hashtable] $raw)
@@ -157,6 +157,8 @@ function GroupEntities {
         $entityFile = $entry['entityFile']
         $layerPath = if ($entry.ContainsKey('layerPath')) { $entry['layerPath'] } else { '' }
         $key = "$entityFile|$layerPath"
+        # World position singles out one placed instance; exports without it fall back to template + layer
+        if ($entry.ContainsKey('posX')) { $key += "|$($raw['posX']),$($raw['posY']),$($raw['posZ'])" }
 
         if (-not $primary.Contains($key)) {
             $primary[$key] = $entry
@@ -407,6 +409,14 @@ function BuildOverrideElement {
     # Inline layer match for a lone override
     if ($LayerPath -ne '') {
         $override.AppendChild((BuildLayerMatch $Doc $LayerPath)) | Out-Null
+    }
+
+    if ($Params.ContainsKey('posX')) {
+        $matchPos = $Doc.CreateElement('match_position')
+        $matchPos.SetAttribute('x', (FmtFloat $Params['posX']))
+        $matchPos.SetAttribute('y', (FmtFloat $Params['posY']))
+        $matchPos.SetAttribute('z', (FmtFloat $Params['posZ']))
+        $override.AppendChild($matchPos) | Out-Null
     }
 
     AddShadowsChild $Doc $override $Params ''
