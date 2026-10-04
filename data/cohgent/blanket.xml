@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<redxml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="../LightRewriteDefinitions.xsd">
+  <custom>
+    <light_rewrite>
+      <!--
+        Cohgent blanket rules: relative adjustments to whole families of lights.
+
+        Weights in Cohgent:
+          0-75   inherited Default / Realistic rules
+          80-99  these blanket rules - scale whatever the inherited rules produced (or vanilla)
+          100+   per-light edits from the debug editor - absolute values, always win
+
+        *_scale multiplies the value resolved so far, never compounds on re-apply,
+        and is ignored on an element that also sets the absolute value.
+      -->
+      <overrides profile_name="Cohgent"
+                 weight="90">
+        <!-- Braziers everywhere: wider, softer light (brazier_* and braziers_* templates) -->
+        <override tag_name="LR_Cohgent_Blanket_Brazier"
+                  label="cohgent_blanket_brazier"
+                  brightness_scale="0.7"
+                  radius_scale="1.3">
+          <match>brazier</match>
+          <!-- Entity-level values only reach point lights; bounce braziers also carry a spotlight -->
+          <spotlight brightness_scale="0.7" />
+        </override>
+      </overrides>
+    </light_rewrite>
+  </custom>
+</redxml>
