@@ -14,6 +14,7 @@ class LRDebug_LabelManager {
     private var scaleLabel     : LRDebug_ScreenLabel;
     private var timeLabel      : LRDebug_ScreenLabel;
     private var timeModeLabel  : LRDebug_ScreenLabel;
+    private var modStateLabel  : LRDebug_ScreenLabel;
     private var pathLabel      : LRDebug_PathLabel;
     private var attrLabels     : LRDebug_AttributeLabels;
     private var clockFace      : LRDebug_ClockFace;
@@ -37,6 +38,8 @@ class LRDebug_LabelManager {
         timeLabel.Init(0x40006004, 0.5, 0.98, 378.0);
         timeModeLabel = new LRDebug_ScreenLabel in this;
         timeModeLabel.Init(0x40006005, 0.5, 0.95, 378.0);
+        modStateLabel = new LRDebug_ScreenLabel in this;
+        modStateLabel.Init(0x40006006, 0.5, 0.95, 252.0);
         clockFace = new LRDebug_ClockFace in this;
         clockFace.Init();
         attrLabels = new LRDebug_AttributeLabels in this;
@@ -77,6 +80,17 @@ class LRDebug_LabelManager {
         }
     }
 
+    /** Whether Light Rewrite is applied at all (the mod toggle), so originals aren't mistaken for edits */
+    public function RefreshModStateLabel() {
+        if (theGame.GetLightRewriteSettings().isEnabled) {
+            modStateLabel.SetText("<font size='16' color='#88ffdd'>LightRewrite ON</font>");
+        }
+        else {
+            modStateLabel.SetText("<font size='16' color='#ff6666'>LightRewrite OFF (originals)</font>");
+        }
+        modStateLabel.Show();
+    }
+
     public function HideScreenLabels() {
         pathLabel.Hide();
         groupLabel.Hide();
@@ -84,6 +98,7 @@ class LRDebug_LabelManager {
         scaleLabel.Hide();
         timeLabel.Hide();
         timeModeLabel.Hide();
+        modStateLabel.Hide();
         clockFace.Hide();
         attrLabels.Hide();
     }

@@ -173,6 +173,8 @@ timer function LRDebug_RefreshOnelinersTimer(dt: float, id: int) {
     if (!lrDebugLabels || !theGame || !thePlayer) return;
 
     lrDebugUnknownMarkers.Scan();
+    // Before the lock check: a locked target is exactly when the mod toggle gets flicked
+    lrDebugLabelManager.RefreshModStateLabel();
 
     if (
         lrDebugTargeting.IsLocked() ||
