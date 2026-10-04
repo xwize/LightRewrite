@@ -20,6 +20,10 @@
           <match mode="exact">candle_holder_large_wood_b_complex.w2ent</match>
           <match_position x="-60.574" y="602.542" z="2.503" />
         </override>
+        <override tag_name="LR_D4onscsW_candle_holder_large_wood_b_complex" label="edited_candle_holder_large_wood_b_complex" brightness="5.74">
+          <match mode="exact">candle_holder_large_wood_b_complex.w2ent</match>
+          <match_position x="-53.166" y="610.325" z="2.503" />
+        </override>
         <override tag_name="LR_k8lTweaW_candle_holder_large_wood_b_complex_2" label="edited_candle_holder_large_wood_b_complex_w2ent" brightness="7.09">
           <match mode="exact">candle_holder_large_wood_b_complex.w2ent</match>
           <match_position x="-52.698" y="602.175" z="2.503" />
