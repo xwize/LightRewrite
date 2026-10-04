@@ -18,7 +18,7 @@
           <match mode="exact">baron_candle_holder.w2ent</match>
           <match_position x="1711.393" y="972.684" z="8.242" />
         </override>
-        <override tag_name="LR_dg0oR8Bx_candelabra_2" label="edited_candelabra_w2ent" radius="20.91" brightness="9.9">
+        <override tag_name="LR_dg0oR8Bx_candelabra_2" label="edited_candelabra_w2ent" radius="9.44" brightness="4.49">
           <match mode="exact">candelabra.w2ent</match>
           <match_position x="1705.152" y="974.013" z="9.219" />
         </override>

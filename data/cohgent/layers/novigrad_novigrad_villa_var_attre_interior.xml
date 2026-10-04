@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<redxml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../LightRewriteDefinitions.xsd">
+  <custom>
+    <light_rewrite>
+      <overrides profile_name="Cohgent" weight="100">
+        <matches>
+          <match type="layer" mode="exact">levels\novigrad\novigrad\villa_var_attre\interior.w2l</match>
+        </matches>
+        <override tag_name="LR_GjguyI5Q_candelabra_complex_3" label="edited_candelabra_complex_w2ent" brightness="7.74" radius="2.35" attenuation="0.6">
+          <match mode="exact">candelabra_complex.w2ent</match>
+          <match_position x="703.471" y="2062.523" z="37.069" />
+          <spotlight brightness="7.05" radius="2.92" attenuation="0.83" />
+        </override>
+        <override tag_name="LR_GjguyI5Q_candelabra_complex_2" label="edited_candelabra_complex_w2ent" brightness="3.15" radius="2.4">
+          <match mode="exact">candelabra_complex.w2ent</match>
+          <match_position x="706.501" y="2070.461" z="41.611" />
+          <spotlight brightness="4.94" radius="4.72" />
+        </override>
+        <override tag_name="LR_GjguyI5Q_candelabra_complex" label="edited_candelabra_complex_w2ent" brightness="2.39">
+          <match mode="exact">candelabra_complex.w2ent</match>
+          <match_position x="710.066" y="2079.164" z="41.548" />
+          <spotlight brightness="10.99" />
+        </override>
+        <override tag_name="LR_GjguyI5Q_candelabra_standing_complex_6" label="edited_candelabra_standing_complex_w2ent" brightness="9.29">
+          <match mode="exact">candelabra_standing_complex.w2ent</match>
+          <match_position x="706.599" y="2069.901" z="36.333" />
+          <spotlight brightness="3.6" />
+        </override>
+        <override tag_name="LR_GjguyI5Q_candelabra_standing_complex_2" label="edited_candelabra_standing_complex_w2ent" brightness="9.29">
+          <match mode="exact">candelabra_standing_complex.w2ent</match>
+          <match_position x="707.219" y="2059.556" z="40.745" />
+          <spotlight brightness="3.6" />
+        </override>
+        <override tag_name="LR_GjguyI5Q_candelabra_standing_complex_9" label="edited_candelabra_standing_complex_w2ent" brightness="9.29">
+          <match mode="exact">candelabra_standing_complex.w2ent</match>
+          <match_position x="709.87" y="2078.279" z="31.132" />
+          <spotlight brightness="3.6" />
+        </override>
+        <override tag_name="LR_GjguyI5Q_candelabra_standing_complex_8" label="edited_candelabra_standing_complex_w2ent" brightness="9.29">
+          <match mode="exact">candelabra_standing_complex.w2ent</match>
+          <match_position x="710.028" y="2061.63" z="31.119" />
+          <spotlight brightness="3.6" />
+        </override>
+        <override tag_name="LR_GjguyI5Q_candelabra_standing_complex_5" label="edited_candelabra_standing_complex_w2ent" brightness="9.29">
+          <match mode="exact">candelabra_standing_complex.w2ent</match>
+          <match_position x="712.196" y="2069.084" z="36.333" />
+          <spotlight brightness="3.6" />
+        </override>
+        <override tag_name="LR_GjguyI5Q_candelabra_standing_complex_7" label="edited_candelabra_standing_complex_w2ent" brightness="9.29">
+          <match mode="exact">candelabra_standing_complex.w2ent</match>
+          <match_position x="712.639" y="2072.243" z="40.755" />
+          <spotlight brightness="3.6" />
+        </override>
+        <override tag_name="LR_GjguyI5Q_candelabra_standing_complex" label="edited_candelabra_standing_complex_w2ent" brightness="9.29">
+          <match mode="exact">candelabra_standing_complex.w2ent</match>
+          <match_position x="714.792" y="2077.671" z="31.132" />
+          <spotlight brightness="3.6" />
+        </override>
+        <override tag_name="LR_GjguyI5Q_candelabra_standing_complex_3" label="edited_candelabra_standing_complex_w2ent" brightness="4.2">
+          <match mode="exact">candelabra_standing_complex.w2ent</match>
+          <match_position x="715.903" y="2078.451" z="40.745" />
+          <spotlight brightness="3.6" />
+        </override>
+        <override tag_name="LR_GjguyI5Q_candelabra_standing_complex_4" label="edited_candelabra_standing_complex_w2ent" brightness="9.29">
+          <match mode="exact">candelabra_standing_complex.w2ent</match>
+          <match_position x="718.68" y="2078.107" z="36.333" />
+          <spotlight brightness="3.6" />
+        </override>
+      </overrides>
+    </light_rewrite>
+  </custom>
+</redxml>
