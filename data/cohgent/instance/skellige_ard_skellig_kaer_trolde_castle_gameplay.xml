@@ -11,62 +11,6 @@
           <match_position x="-153.374" y="743.3" z="96.58" />
           <spotlight brightness="23.59" />
         </override>
-        <override tag_name="LR_k8lTweaW_braziers_wall_round_bounce_3" label="edited_braziers_wall_round_bounce_w2ent" brightness="39.59" radius="11.08">
-          <match mode="exact">braziers_wall_round_bounce.w2ent</match>
-          <match_position x="-153.018" y="696.142" z="97.135" />
-        </override>
-        <override tag_name="LR_k8lTweaW_braziers_wall_round_bounce_2" label="edited_braziers_wall_round_bounce_w2ent" brightness="39.59" radius="11.08">
-          <match mode="exact">braziers_wall_round_bounce.w2ent</match>
-          <match_position x="-150.863" y="669.471" z="88.31" />
-        </override>
-        <override tag_name="LR_k8lTweaW_braziers_wall_round_bounce_6" label="edited_braziers_wall_round_bounce_w2ent" brightness="39.59" radius="11.08">
-          <match mode="exact">braziers_wall_round_bounce.w2ent</match>
-          <match_position x="-146.842" y="749.516" z="97.694" />
-        </override>
-        <override tag_name="LR_k8lTweaW_braziers_wall_round_bounce_7" label="edited_braziers_wall_round_bounce_w2ent" brightness="39.59" radius="11.08">
-          <match mode="exact">braziers_wall_round_bounce.w2ent</match>
-          <match_position x="-139.347" y="750.916" z="97.526" />
-        </override>
-        <override tag_name="LR_k8lTweaW_braziers_wall_round_bounce_5" label="edited_braziers_wall_round_bounce_w2ent" brightness="39.59" radius="11.08">
-          <match mode="exact">braziers_wall_round_bounce.w2ent</match>
-          <match_position x="-136.678" y="750.014" z="109.509" />
-        </override>
-        <override tag_name="LR_k8lTweaW_braziers_wall_round_bounce_4" label="edited_braziers_wall_round_bounce_w2ent" brightness="39.59" radius="11.08">
-          <match mode="exact">braziers_wall_round_bounce.w2ent</match>
-          <match_position x="-136.438" y="727.037" z="96.386" />
-        </override>
-        <override tag_name="LR_k8lTweaW_braziers_wall_round_bounce_8" label="edited_braziers_wall_round_bounce_w2ent" brightness="39.59" radius="11.08">
-          <match mode="exact">braziers_wall_round_bounce.w2ent</match>
-          <match_position x="-135.925" y="746.161" z="97.526" />
-        </override>
-        <override tag_name="LR_k8lTweaW_braziers_wall_round_bounce_9" label="edited_braziers_wall_round_bounce_w2ent" brightness="39.59" radius="11.08">
-          <match mode="exact">braziers_wall_round_bounce.w2ent</match>
-          <match_position x="-134.694" y="739.692" z="97.526" />
-        </override>
-        <override tag_name="LR_k8lTweaW_braziers_wall_round_bounce_13" label="edited_braziers_wall_round_bounce_w2ent" brightness="39.59" radius="11.08">
-          <match mode="exact">braziers_wall_round_bounce.w2ent</match>
-          <match_position x="-99.901" y="736.685" z="73.769" />
-        </override>
-        <override tag_name="LR_k8lTweaW_braziers_wall_round_bounce_12" label="edited_braziers_wall_round_bounce_w2ent" brightness="39.59" radius="11.08">
-          <match mode="exact">braziers_wall_round_bounce.w2ent</match>
-          <match_position x="-96.731" y="746.204" z="74.76" />
-        </override>
-        <override tag_name="LR_k8lTweaW_braziers_wall_round_bounce_14" label="edited_braziers_wall_round_bounce_w2ent" brightness="39.59" radius="11.08">
-          <match mode="exact">braziers_wall_round_bounce.w2ent</match>
-          <match_position x="-96.385" y="733.241" z="73.769" />
-        </override>
-        <override tag_name="LR_k8lTweaW_braziers_wall_round_bounce_11" label="edited_braziers_wall_round_bounce_w2ent" brightness="39.59" radius="11.08">
-          <match mode="exact">braziers_wall_round_bounce.w2ent</match>
-          <match_position x="-94.386" y="753.921" z="70.545" />
-        </override>
-        <override tag_name="LR_k8lTweaW_braziers_wall_round_bounce_15" label="edited_braziers_wall_round_bounce_w2ent" brightness="39.59" radius="11.08">
-          <match mode="exact">braziers_wall_round_bounce.w2ent</match>
-          <match_position x="-94.27" y="735.802" z="93.086" />
-        </override>
-        <override tag_name="LR_k8lTweaW_braziers_wall_round_bounce_10" label="edited_braziers_wall_round_bounce_w2ent" brightness="39.59" radius="11.08">
-          <match mode="exact">braziers_wall_round_bounce.w2ent</match>
-          <match_position x="-85.793" y="741.031" z="89.02" />
-        </override>
         <override tag_name="LR_k8lTweaW_torch_wall_metal_bounce" label="edited_torch_wall_metal_bounce_w2ent" brightness="17.29">
           <match mode="exact">torch_wall_metal_bounce.w2ent</match>
           <match_position x="-156.961" y="741.107" z="100.845" />

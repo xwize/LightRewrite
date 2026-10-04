@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<redxml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../LightRewriteDefinitions.xsd">
+  <custom>
+    <light_rewrite>
+      <overrides profile_name="Cohgent" weight="95">
+        <matches>
+          <match type="layer" mode="exact">levels\novigrad\white_bridge\ligths</match>
+        </matches>
+        <override tag_name="LR_4jdUOChZ_braziers_floor_square_bounce" label="edited_braziers_floor_square_bounce_w2ent" brightness="21.13" radius="10.07">
+          <match mode="exact">braziers_floor_square_bounce.w2ent</match>
+          <spotlight brightness="30.9" />
+        </override>
+      </overrides>
+    </light_rewrite>
+  </custom>
+</redxml>

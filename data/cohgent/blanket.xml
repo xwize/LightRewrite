@@ -9,7 +9,8 @@
         Weights in Cohgent:
           0-75   inherited Default / Realistic rules
           80-94  these blanket rules - scale whatever the inherited rules produced (or vanilla)
-          95     compat/ template + layer rules
+          95     template/ template + layer rules from sessions
+          96     compat/ curated upstream-compatible rules (win over template/)
           100+   instance/ per-light edits and new sessions - absolute values, always win
 
         *_scale multiplies the value resolved so far, never compounds on re-apply,

@@ -6,13 +6,15 @@
       <!--
         Cohgent: Realistic, plus edits made in the debug editor.
 
-          compat/<layer>.xml    weight 95   template + layer rules, absolute values - works on upstream Light Rewrite
-          instance/<layer>.xml  weight 100  per-light <match_position> entries - needs the cohgent fork
           blanket.xml           weight 90   relative *_scale rules - needs the cohgent fork
+          compat/<layer>.xml    weight 96   curated, highest-quality template + layer rules for sharing, absolute values only -
+                                            works on upstream Light Rewrite; maintained by hand, never written by tooling
+          template/<layer>.xml  weight 95   template + layer rules from editor sessions (absolute values); compat/ wins over it
+          instance/<layer>.xml  weight 100  per-light <match_position> entries - needs the cohgent fork
           session_*.xml         weight 101+ unconsolidated imports, newest highest
 
-        Upstream ignores elements and attributes it doesn't know, so instance and blanket data
-        would silently apply to every copy of a template (or do nothing) there - keep them out of compat.
+        Upstream ignores elements and attributes it doesn't know, so positions and scales would silently
+        apply to every copy of a template (or do nothing) there - keep them out of compat/.
       -->
       <overrides profile_name="Cohgent"
                  weight="0">

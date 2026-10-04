@@ -58,12 +58,15 @@ Cohgent's personal profile, built on Realistic, mostly from in-game editor sessi
 |---|---|---|---|
 | `cohgent.xml` | 0 | Profile base: `<inherits>Realistic</inherits>` | Yes |
 | `blanket.xml` | 90 | Relative `*_scale` rules | **No** - needs this fork |
-| `compat/<layer>.xml` | 95 | Template + layer rules, absolute values only | **Yes** |
+| `template/<layer>.xml` | 95 | Template + layer rules from editor sessions | Format yes; not curated |
+| `compat/<layer>.xml` | 96 | Curated, highest-quality template + layer rules for sharing, absolute values only; win over `template/` | **Yes** |
 | `instance/<layer>.xml` | 100 | Per-light `<match_position>` entries | **No** - needs this fork |
 
 #### Upstream compatibility
 
-- `compat/` uses only upstream features; the consolidation tooling refuses to write positions or scales there.
+- `compat/` is the upstream-compatible, curated set: template + layer rules with absolute values, maintained by hand.
+  Consolidation never writes to it, and warns if positions or scales appear in it.
+- `template/` uses the same upstream format but is working data from editor sessions, not reviewed for sharing.
 - `instance/` and `blanket.xml` depend on this fork. Upstream ignores unknown elements and attributes rather than
   rejecting them, so on upstream per-light entries would apply to every copy of their template, and scale rules would have no effect.
 - All rules use `profile_name="Cohgent"` and Cohgent's weights; the matches and values are independent of the profile.
