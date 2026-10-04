@@ -4,8 +4,10 @@
  * fiddly setup in one place.
  */
 class LRDebug_LabelManager {
-    private const var TOAST_ID        : int;  default TOAST_ID = 0x4000A000;
-    private const var ONELINER_BASE_ID: int;  default ONELINER_BASE_ID = 0x4000B000;
+    // Oneliner ID for the self-replacing toast: `0x4000A000`
+    private const var TOAST_ID        : int;  default TOAST_ID = 1073782784;
+    // Base ID for dynamic oneliners: `0x4000B000`
+    private const var ONELINER_BASE_ID: int;  default ONELINER_BASE_ID = 1073786880;
 
     private var lastOnelinerId : int;
     private var toast          : LRDebug_ToastOneLiner;
@@ -330,16 +332,11 @@ class LRDebug_LabelManager {
         }
     }
 
-    private function CountComponents(entity: CGameplayEntity, className: name): int {
-        var components: array<CComponent> = entity.GetComponentsByClassName(className);
-        return components.Size();
-    }
-
     private function CreateOnelinerForEntity(entity: CGameplayEntity) {
         var label: LRDebug_LightOneLiner;
 
-        var pointLights: int = CountComponents(entity, 'CPointLightComponent');
-        var spotLights: int = CountComponents(entity, 'CSpotLightComponent');
+        var pointLights: int = entity.LRDebug_PointLightCount();
+        var spotLights: int = entity.LRDebug_SpotLightCount();
 
         if (pointLights == 0 && spotLights == 0) return;
 

@@ -188,6 +188,11 @@ function Sanitize {
     return [regex]::Replace($Name, '[^A-Za-z0-9_]', '_')
 }
 
+function Get-EntityName {
+    param([string] $EntityFile)
+    return [regex]::Replace((Sanitize $EntityFile), '_w2ent$', '')
+}
+
 function NewRandomToken {
     $alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
     return -join (1..8 | ForEach-Object { $alphabet[(Get-Random -Maximum $alphabet.Length)] })
@@ -205,7 +210,7 @@ function AssignTagNames {
 
     foreach ($dict in $Primary, $Overflow) {
         foreach ($key in $dict.Keys) {
-            $entity = [regex]::Replace((Sanitize $dict[$key]['entityFile']), '_w2ent$', '')
+            $entity = Get-EntityName $dict[$key]['entityFile']
             $base = "LR_${token}_${entity}"
             $seenBases[$base] = ($seenBases[$base] ?? 0) + 1
             $n = $seenBases[$base]
@@ -291,10 +296,13 @@ function BuildSpotlightElement {
     param(
         [System.Xml.XmlDocument] $Doc,
         [hashtable]              $Params,
-        [string]                 $Prefix
+        [int]                    $Index,
+        [int]                    $Count
     )
 
+    $Prefix = "s${Index}_"
     $spot = $Doc.CreateElement('spotlight')
+    if (!(SpotlightIndexRedundant $Params $Index $Count)) { $spot.SetAttribute('index', [string]$Index) }
     if ($Params.ContainsKey("${Prefix}brightness")) { $spot.SetAttribute('brightness', (FmtFloat $Params["${Prefix}brightness"])) }
     if ($Params.ContainsKey("${Prefix}radius")) { $spot.SetAttribute('radius', (FmtFloat $Params["${Prefix}radius"])) }
     if ($Params.ContainsKey("${Prefix}attenuation")) { $spot.SetAttribute('attenuation', (FmtFloat $Params["${Prefix}attenuation"])) }
@@ -390,7 +398,7 @@ function BuildOverrideElement {
 
     $override = $Doc.CreateElement('override')
     $override.SetAttribute('tag_name', $TagName)
-    $override.SetAttribute('label', 'edited_' + (Sanitize $entityFile))
+    $override.SetAttribute('label', 'edited_' + (Get-EntityName $entityFile))
 
     if ($Params.ContainsKey('brightness')) { $override.SetAttribute('brightness', (FmtFloat $Params['brightness'])) }
     if ($Params.ContainsKey('radius')) { $override.SetAttribute('radius', (FmtFloat $Params['radius'])) }
@@ -400,7 +408,7 @@ function BuildOverrideElement {
         $override.SetAttribute('use_spotlight_colour', $val)
     }
 
-    # <match mode="exact"> for entity file stem
+    # <match mode="exact"> for entity file
     $matchEntity = $Doc.CreateElement('match')
     $matchEntity.SetAttribute('mode', 'exact')
     $matchEntity.InnerText = $entityFile
@@ -438,11 +446,7 @@ function BuildOverrideElement {
 
     $spotIndices = ComponentIndices $Params 's'
     foreach ($idx in $spotIndices) {
-        $spotEl = BuildSpotlightElement $Doc $Params "s${idx}_"
-        if (!(SpotlightIndexRedundant $Params $idx $spotIndices.Count)) {
-            $spotEl.SetAttribute('index', [string]$idx)
-        }
-        $override.AppendChild($spotEl) | Out-Null
+        $override.AppendChild((BuildSpotlightElement $Doc $Params $idx $spotIndices.Count)) | Out-Null
     }
 
     return $override

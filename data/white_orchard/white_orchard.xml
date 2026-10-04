@@ -16,16 +16,13 @@
         <!-- All candles in White Orchard -->
         <override tag_name="LR_WhiteOrchard_Candle"
                   label="white_orchard_candle"
-                  brightness="8"
-                  radius="4"
-                  attenuation="1.0"
-                  use_spotlight_colour="true">
+                  radius="5">
           <!-- Match all entities with a file name starting with "candle" -->
           <match>candle</match>
-          <!-- Set the light colour to a more bluish white -->
-          <colour r="240"
-                  g="245"
-                  b="255" />
+          <!-- Set the light colour to a more bluish white - ENV fight -->
+          <colour r="255"
+                  g="250"
+                  b="245" />
           <shadows fade_distance="10"
                    fade_range="12.5"
                    casting_mode="Normal" />
@@ -37,6 +34,9 @@
                   radius="5"
                   attenuation="1">
           <match>hanging_lamp</match>
+          <offset x="0"
+                  y="0"
+                  z="-0.09" />
         </override>
 
         <!-- Campfires -->
@@ -109,8 +109,39 @@
                   label="white_orchard_wall_torches"
                   brightness="20"
                   radius="6"
-                  attenuation="0.9">
+                  attenuation="1">
           <match mode="exact">torch_wall_metal.w2ent</match>
+        </override>
+
+        <!-- Stoves -->
+        <override tag_name="LR_WhiteOrchard_Stove"
+                  label="white_orchard_stove">
+          <match mode="exact">coal_small_double_spotlight_complex.w2ent</match>
+          <spotlight index="0"
+                     radius="2.5"
+                     attenuation="1" />
+          <spotlight index="1"
+                     radius="5"
+                     attenuation="1" />
+        </override>
+
+        <!-- Cooking fire -->
+        <override tag_name="LR_WhiteOrchard_CookingFire"
+                  label="white_orchard_cooking_fire"
+                  radius="5.5">
+          <match mode="exact">stand_mw_cooking_</match>
+          <offset x="0"
+                  y="0"
+                  z="0.25" />
+        </override>
+
+        <!-- Forge -->
+        <override tag_name="LR_WhiteOrchard_Forge"
+                  label="white_orchard_forge"
+                  radius="5.5">
+          <match mode="exact">ob_forge_px.w2ent</match>
+          <shadows fade_distance="25"
+                   fade_range="20" />
         </override>
       </overrides>
     </light_rewrite>
