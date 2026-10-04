@@ -35,17 +35,21 @@ abstract class ILightSourceRewriter {
         return maxSafeRadius > 0.0;
     }
 
-    // The radius this light would have with no spacing cap: the profile's, else the saved vanilla
+    // The radius this light would have with no spacing cap: the profile's, else the saved vanilla times any scale
     public function GetUncappedRadius(pointLight: CPointLightComponent, index: int): float {
         var p: CLightRewriteSourceParams = GetEffectiveParams();
-        var pointParams: CLightRewriteComponentLightParams = p.GetPointLightParams(index);
 
-        if (pointParams && pointParams.radius.has) return pointParams.radius.value;
-        if (p.radius.has) return p.radius.value;
+        return ResolveRadius(pointLight, p.MergePointLightParams(p.GetPointLightParams(index)));
+    }
+
+    /** Absolute radius if set, else the saved vanilla radius times any scale */
+    protected function ResolveRadius(pointLight: CPointLightComponent, effective: ILightRewriteParams): float {
+        var vanilla: float = pointLight.radius;
+
         if (pointLight.lightRewriteOriginalValues.hasBeenSaved) {
-            return pointLight.lightRewriteOriginalValues.radius;
+            vanilla = pointLight.lightRewriteOriginalValues.radius;
         }
-        return pointLight.radius;
+        return LR_ResolveScaled(effective.radius, effective.radiusScale, vanilla);
     }
 
     protected function GetEffectiveParams(): CLightRewriteSourceParams {
@@ -179,9 +183,22 @@ abstract class ILightSourceRewriter {
     }
 
     protected function ApplyLightParams(light: CLightComponent, pamparams: ILightRewriteParams) {
-        if (pamparams.brightness.has) light.brightness = pamparams.brightness.value;
-        if (pamparams.radius.has) light.radius = pamparams.radius.value;
-        if (pamparams.attenuation.has) light.attenuation = pamparams.attenuation.value;
+        var vanilla: SLightRewriteOriginalValues;
+
+        // Scales multiply the vanilla value, never the live one, so repeated rewrites can't compound
+        light.SaveLightRewriteOriginalValues();
+        vanilla = light.lightRewriteOriginalValues;
+
+        // Untouched fields stay as the engine set them
+        if (pamparams.brightness.has || pamparams.brightnessScale.has) {
+            light.brightness = LR_ResolveScaled(pamparams.brightness, pamparams.brightnessScale, vanilla.brightness);
+        }
+        if (pamparams.radius.has || pamparams.radiusScale.has) {
+            light.radius = LR_ResolveScaled(pamparams.radius, pamparams.radiusScale, vanilla.radius);
+        }
+        if (pamparams.attenuation.has || pamparams.attenuationScale.has) {
+            light.attenuation = LR_ResolveScaled(pamparams.attenuation, pamparams.attenuationScale, vanilla.attenuation);
+        }
         if (pamparams.shadowFadeDistance.has) {
             light.shadowFadeDistance = pamparams.shadowFadeDistance.value;
         }
@@ -346,10 +363,7 @@ abstract class ILightSourceRewriter {
         index: int
     ) {
         // Re-establish from source; the spacing cap overwrites the live radius, so it cannot grow back on its own
-        var uncapped: float;
-
-        if (effective.radius.has) uncapped = effective.radius.value;
-        else uncapped = GetUncappedRadius(pointLight, index);
+        var uncapped: float = ResolveRadius(pointLight, effective);
 
         ApplyLightParams(pointLight, effective);
 

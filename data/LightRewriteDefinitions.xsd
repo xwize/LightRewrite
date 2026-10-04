@@ -217,6 +217,27 @@
         <xs:documentation>Light attenuation - how quickly the light fades out with distance.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
+    <xs:attribute name="brightness_scale"
+                  type="xs:decimal"
+                  use="optional">
+      <xs:annotation>
+        <xs:documentation>Multiplies the brightness resolved by earlier overrides, or the vanilla brightness if none set it. Ignored when the same element sets brightness. Stacked scales multiply.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="radius_scale"
+                  type="xs:decimal"
+                  use="optional">
+      <xs:annotation>
+        <xs:documentation>Multiplies the radius resolved by earlier overrides, or the vanilla radius if none set it. Ignored when the same element sets radius. Stacked scales multiply.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="attenuation_scale"
+                  type="xs:decimal"
+                  use="optional">
+      <xs:annotation>
+        <xs:documentation>Multiplies the attenuation resolved by earlier overrides, or the vanilla attenuation if none set it. Ignored when the same element sets attenuation. Stacked scales multiply.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
     <xs:attribute name="use_spotlight_colour"
                   type="xs:boolean"
                   use="optional">
@@ -498,6 +519,27 @@
     <xs:attribute name="attenuation"
                   type="xs:decimal"
                   use="optional" />
+    <xs:attribute name="brightness_scale"
+                  type="xs:decimal"
+                  use="optional">
+      <xs:annotation>
+        <xs:documentation>Multiplies the brightness resolved by earlier overrides, or the vanilla brightness if none set it. Ignored when the same element sets brightness. Stacked scales multiply.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="radius_scale"
+                  type="xs:decimal"
+                  use="optional">
+      <xs:annotation>
+        <xs:documentation>Multiplies the radius resolved by earlier overrides, or the vanilla radius if none set it. Ignored when the same element sets radius. Stacked scales multiply.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="attenuation_scale"
+                  type="xs:decimal"
+                  use="optional">
+      <xs:annotation>
+        <xs:documentation>Multiplies the attenuation resolved by earlier overrides, or the vanilla attenuation if none set it. Ignored when the same element sets attenuation. Stacked scales multiply.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
   </xs:complexType>
 
   <xs:complexType name="spotlightOverrideType">
@@ -568,6 +610,27 @@
                   use="optional">
       <xs:annotation>
         <xs:documentation>Spotlight attenuation - how quickly the light fades out with distance.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="brightness_scale"
+                  type="xs:decimal"
+                  use="optional">
+      <xs:annotation>
+        <xs:documentation>Multiplies the brightness resolved by earlier overrides, or the vanilla brightness if none set it. Ignored when the same element sets brightness. Stacked scales multiply.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="radius_scale"
+                  type="xs:decimal"
+                  use="optional">
+      <xs:annotation>
+        <xs:documentation>Multiplies the radius resolved by earlier overrides, or the vanilla radius if none set it. Ignored when the same element sets radius. Stacked scales multiply.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="attenuation_scale"
+                  type="xs:decimal"
+                  use="optional">
+      <xs:annotation>
+        <xs:documentation>Multiplies the attenuation resolved by earlier overrides, or the vanilla attenuation if none set it. Ignored when the same element sets attenuation. Stacked scales multiply.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
     <xs:attribute name="innerAngle"

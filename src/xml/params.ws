@@ -23,6 +23,18 @@ function ParseLightRewriteBaseParams(
         params.attenuation.has = true;
         params.attenuation.value = StringToFloat(strVal, 0.f);
     }
+    if (dm.GetCustomNodeAttributeValueString(node, 'brightness_scale', strVal)) {
+        params.brightnessScale.has = true;
+        params.brightnessScale.value = StringToFloat(strVal, 1.f);
+    }
+    if (dm.GetCustomNodeAttributeValueString(node, 'radius_scale', strVal)) {
+        params.radiusScale.has = true;
+        params.radiusScale.value = StringToFloat(strVal, 1.f);
+    }
+    if (dm.GetCustomNodeAttributeValueString(node, 'attenuation_scale', strVal)) {
+        params.attenuationScale.has = true;
+        params.attenuationScale.value = StringToFloat(strVal, 1.f);
+    }
 
     shadowsNode = dm.GetCustomDefinitionSubNode(node, 'shadows');
     if (dm.GetCustomNodeAttributeValueString(shadowsNode, 'fade_distance', strVal)) {
