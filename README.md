@@ -1,6 +1,6 @@
-# Light Rewrite - xwize fork
+# Light Rewrite - Cohgent fork
 
-> **This is an unofficial fork of [webspam/LightRewrite](https://github.com/webspam/LightRewrite).**
+> **This is an unofficial fork of [webspam/LightRewrite](https://github.com/webspam/LightRewrite) by Cohgent.**
 > Work lives on the `cohgent` branch, which tracks upstream by merging (currently up to v0.15.0).
 > The original mod, its releases and support are upstream. The original README follows [below](#light-rewrite-or-next-gen-lighting-fix).
 
@@ -49,7 +49,7 @@ This fork adds a position filter, so a rule can target one placed light:
 
 ### 4. The Cohgent profile (`data/cohgent/`)
 
-A personal profile built on Realistic, mostly from in-game editor sessions.
+Cohgent's personal profile, built on Realistic, mostly from in-game editor sessions.
 
 | Path | Weight | Contents | Works on upstream? |
 |---|---|---|---|
