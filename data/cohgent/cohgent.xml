@@ -3,8 +3,17 @@
         xsi:noNamespaceSchemaLocation="../LightRewriteDefinitions.xsd">
   <custom>
     <light_rewrite>
-      <!-- Cohgent: Realistic, plus per-light edits made in the debug editor -->
-      <!-- Edits live in session_*.xml beside this file, each at an increasing weight (100+) so newer sessions win -->
+      <!--
+        Cohgent: Realistic, plus edits made in the debug editor.
+
+          compat/<layer>.xml    weight 95   template + layer rules, absolute values - works on upstream Light Rewrite
+          instance/<layer>.xml  weight 100  per-light <match_position> entries - needs the cohgent fork
+          blanket.xml           weight 90   relative *_scale rules - needs the cohgent fork
+          session_*.xml         weight 101+ unconsolidated imports, newest highest
+
+        Upstream ignores elements and attributes it doesn't know, so instance and blanket data
+        would silently apply to every copy of a template (or do nothing) there - keep them out of compat.
+      -->
       <overrides profile_name="Cohgent"
                  weight="0">
         <!-- The only inherits declaration for Cohgent; session files must not repeat it -->
