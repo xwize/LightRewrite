@@ -42,6 +42,9 @@ This fork adds a position filter, so a rule can target one placed light:
 
 - **Per-light export:** each exported light carries its world position, and `tools/Export-Lights.ps1` writes one
   override per light with `<match_position>`, instead of collapsing copies into a `_Duplicates` block.
+  The `LRDebug_TogglePositionExport` action switches the export to template + layer rules with no positions
+  (the upstream format); the overlay shows the current mode. Position matching itself is opt-in per rule: only
+  overrides containing `<match_position>` evaluate it.
 - **HUD layout for any aspect ratio:** the attribute grid and side labels are placed in HUD units from screen centre,
   so they no longer overlap on 16:9 (they were tuned for 21:9). Columns are spaced for their longest rows.
 - **Mod state indicator:** shows `LightRewrite ON` / `OFF (originals)`, so the mod toggle isn't mistaken for an edit.

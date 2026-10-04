@@ -12,7 +12,10 @@ class LRDebug_AttributeEditor {
     private var pointLightIndex: int;
     private var spotLightIndex : int;
 
-    private var groupEdit: bool;  default groupEdit = true;
+    // Off by default: per-light export is the default, and most edits tune a single light
+    private var groupEdit: bool;  default groupEdit = false;
+    // Export each light's position, so it gets its own override; off gives one template + layer rule
+    private var exportPositions: bool;  default exportPositions = true;
     private var groupEditTarget: CGameplayEntity;
     private var groupMembers   : array<CGameplayEntity>;
 
@@ -654,6 +657,20 @@ class LRDebug_AttributeEditor {
 
     public function IsGroupEditing(): bool {
         return groupEdit;
+    }
+
+    /**
+     * Group edit follows the export mode: per-light work is usually one light, per-template work a whole set.
+     * The group edit toggle still reaches the other two combinations.
+     */
+    public function ToggleExportPositions(): bool {
+        exportPositions = !exportPositions;
+        groupEdit = !exportPositions;
+        return exportPositions;
+    }
+
+    public function IsExportingPositions(): bool {
+        return exportPositions;
     }
 
     /** Group size is the target plus every matched member (CacheGroupMembers excludes the target) */

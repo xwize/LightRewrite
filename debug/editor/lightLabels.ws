@@ -9,6 +9,7 @@
  * IK_NumPad7=(Action=LRDebug_ToggleLabels)
  * IK_NumPad8=(Action=LRDebug_ToggleLabelPaths)
  * IK_NumPad9=(Action=LRDebug_GroupEdit)
+ * IK_NumPeriod=(Action=LRDebug_TogglePositionExport)
  * IK_NumPad6=(Action=LRDebug_Lock)
  * IK_NumPad4=(Action=LRDebug_ResetLight)
  * IK_NumPad5=(Action=LRDebug_SolveSpacing)
@@ -88,6 +89,7 @@ timer function LRDebug_DeferredLabelInstall(dt: float, id: int) {
     theInput.RegisterListener(this, 'LRDebug_OnInputCycleLightUp', 'LRDebug_CycleLightUp');
     theInput.RegisterListener(this, 'LRDebug_OnInputCycleLightDown', 'LRDebug_CycleLightDown');
     theInput.RegisterListener(this, 'LRDebug_OnInputToggleGroupEdit', 'LRDebug_GroupEdit');
+    theInput.RegisterListener(this, 'LRDebug_OnInputTogglePositionExport', 'LRDebug_TogglePositionExport');
     theInput.RegisterListener(this, 'LRDebug_OnInputToggleRewriter', 'LRDebug_ToggleRewriter');
     theInput.RegisterListener(this, 'LRDebug_OnInputCycleShadowMode', 'LRDebug_CycleShadowMode');
     theInput.RegisterListener(this, 'LRDebug_OnInputExportEdited', 'LRDebug_ExportEdited');
@@ -174,7 +176,7 @@ timer function LRDebug_RefreshOnelinersTimer(dt: float, id: int) {
 
     lrDebugUnknownMarkers.Scan();
     // Before the lock check: a locked target is exactly when the mod toggle gets flicked
-    lrDebugLabelManager.RefreshModStateLabel();
+    lrDebugLabelManager.RefreshStatusLabels();
 
     if (
         lrDebugTargeting.IsLocked() ||
@@ -310,6 +312,22 @@ public function LRDebug_OnInputToggleGroupEdit(action: SInputAction): bool {
 
     if (lrDebugAttrEditor.ToggleGroupEdit()) lrDebugLabelManager.ShowGroupLabel();
     else lrDebugLabelManager.HideGroupLabel();
+    return true;
+}
+
+@addMethod(CR4Player)
+public function LRDebug_OnInputTogglePositionExport(action: SInputAction): bool {
+    if (!lrDebugLabels || !theInput.lr.IsNormalKeydown(action) || !thePlayer) return false;
+
+    if (lrDebugAttrEditor.ToggleExportPositions()) {
+        lrDebugLabelManager.HideGroupLabel();
+        lrDebugLabelManager.ShowToast("Export: per light (with positions) - group edit off", 2.0);
+    }
+    else {
+        lrDebugLabelManager.ShowGroupLabel();
+        lrDebugLabelManager.ShowToast("Export: per template + layer (no positions) - group edit on", 2.0);
+    }
+    lrDebugLabelManager.RefreshStatusLabels();
     return true;
 }
 

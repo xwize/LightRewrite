@@ -181,9 +181,14 @@ function LRDebug_BuildEditedFields(
     return line;
 }
 
-/** World position, so each edited instance exports separately from other copies of its template */
+/**
+ * World position, so each edited instance exports separately from other copies of its template.
+ * Empty when position export is toggled off, which exports one template + layer rule instead.
+ */
 function LRDebug_BuildPositionSegment(entity: CGameplayEntity): string {
     var pos: Vector = entity.GetWorldPosition();
+
+    if (thePlayer.lrDebugAttrEditor && !thePlayer.lrDebugAttrEditor.IsExportingPositions()) return "";
 
     return " posX=" + FloatToStringPrec(pos.X, 3) +
         " posY=" + FloatToStringPrec(pos.Y, 3) +

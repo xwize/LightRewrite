@@ -17,6 +17,7 @@ class LRDebug_LabelManager {
     private var timeLabel      : LRDebug_ScreenLabel;
     private var timeModeLabel  : LRDebug_ScreenLabel;
     private var modStateLabel  : LRDebug_ScreenLabel;
+    private var exportModeLabel: LRDebug_ScreenLabel;
     private var pathLabel      : LRDebug_PathLabel;
     private var attrLabels     : LRDebug_AttributeLabels;
     private var clockFace      : LRDebug_ClockFace;
@@ -42,6 +43,8 @@ class LRDebug_LabelManager {
         timeModeLabel.Init(0x40006005, 0.5, 0.95, 378.0);
         modStateLabel = new LRDebug_ScreenLabel in this;
         modStateLabel.Init(0x40006006, 0.5, 0.95, 252.0);
+        exportModeLabel = new LRDebug_ScreenLabel in this;
+        exportModeLabel.Init(0x40006007, 0.5, 0.92, 252.0);
         clockFace = new LRDebug_ClockFace in this;
         clockFace.Init();
         attrLabels = new LRDebug_AttributeLabels in this;
@@ -82,8 +85,11 @@ class LRDebug_LabelManager {
         }
     }
 
-    /** Whether Light Rewrite is applied at all (the mod toggle), so originals aren't mistaken for edits */
-    public function RefreshModStateLabel() {
+    /**
+     * Whether Light Rewrite is applied at all (the mod toggle), so originals aren't mistaken for edits,
+     * and what the export key will write, so per-light and per-template exports aren't mixed up
+     */
+    public function RefreshStatusLabels() {
         if (theGame.GetLightRewriteSettings().isEnabled) {
             modStateLabel.SetText("<font size='16' color='#88ffdd'>LightRewrite ON</font>");
         }
@@ -91,6 +97,14 @@ class LRDebug_LabelManager {
             modStateLabel.SetText("<font size='16' color='#ff6666'>LightRewrite OFF (originals)</font>");
         }
         modStateLabel.Show();
+
+        if (thePlayer.lrDebugAttrEditor.IsExportingPositions()) {
+            exportModeLabel.SetText("<font size='16' color='#88ffdd'>Export: per light</font>");
+        }
+        else {
+            exportModeLabel.SetText("<font size='16' color='#ffcc66'>Export: per template + layer</font>");
+        }
+        exportModeLabel.Show();
     }
 
     public function HideScreenLabels() {
@@ -101,6 +115,7 @@ class LRDebug_LabelManager {
         timeLabel.Hide();
         timeModeLabel.Hide();
         modStateLabel.Hide();
+        exportModeLabel.Hide();
         clockFace.Hide();
         attrLabels.Hide();
     }
